@@ -5,7 +5,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { ToDoFormComponent } from './to-do-form/to-do-form.component';
-import { ToDoComponent } from './to-do/to-do.component';
+import { ToDoComponent } from './shared/to-do/to-do.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ToDoComponent } from './to-do/to-do.component';
     ToDoComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

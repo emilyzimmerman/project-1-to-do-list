@@ -1,4 +1,10 @@
-<p>To Do</p>
-<app-to-do></app-to-do>
-<app-to-do></app-to-do>
-<app-to-do></app-to-do>
+<h1>To Do</h1>
+<div class =
+'container' *ngFor="let itemObject of todoList; let i = index">
+  <hr>
+  <app-to-do [todoFromShared]="itemObject" [idx]="i"></app-to-do>
+</div>
+
+
+
+
