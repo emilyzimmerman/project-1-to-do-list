@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { todoservice } from '../shared/to-do/todo.service';
+import { ToDo } from '../shared/to-do/toDo.model';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,13 @@ import { todoservice } from '../shared/to-do/todo.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private Todoservice:todoservice) { } //note to Emily: subscribe obersver (aka header)
-
+  constructor(private Todoservice:todoservice) {  }
+    todoCount: number = 0;
   ngOnInit(): void {
+    this.todoCount = this.Todoservice.getTodoCount();
+    this.Todoservice.todosChanged.subscribe((todos: ToDo[]) => {
+      this.todoCount = todos.length;
+    })
   }
 
 }
